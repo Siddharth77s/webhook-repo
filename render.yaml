@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: github-webhook-siddharth
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: MONGODB_URI
+        value: mongodb+srv://siddharth:siddharth@cluster0.s5vmk2i.mongodb.net/github_events?appName=Cluster0
+    plan: free
